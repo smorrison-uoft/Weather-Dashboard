@@ -5,8 +5,8 @@
 
 function searchCity(cityname) {
 
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityname + "&units=imperial&appid=ecc0be5fd92206da3aa90cc41c13ca56";
-    var queryURLforcast = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityname + "&units=imperial&appid=ecc0be5fd92206da3aa90cc41c13ca56";
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityname + "&units=imperial&appid=d1b6905bcb9626855ca37cfb18f9a109";
+    var queryURLforcast = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityname + "&units=imperial&appid=d1b6905bcb9626855ca37cfb18f9a109";
 
     $.ajax({
         url: queryURL,
@@ -24,6 +24,7 @@ function searchCity(cityname) {
         var humEl = $("<p>").text("Humidity: " + response.main.humidity);
         var windEl = $("<p>").text("Wind Speed: " + response.wind.speed);
         var currentweather = response.weather[0].main;
+        
 
         if (currentweather === "Rain") {
             var currentIcon = $('<img>').attr("src", "http://openweathermap.org/img/wn/09d.png");
